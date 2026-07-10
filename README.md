@@ -8,6 +8,8 @@ Optimized for **FLUX, Midjourney, DALL-E, and Gemini**, it demonstrates AI produ
 
 ## 🚀 Live Demo & Screenshots
 
+**Live project:** [prompt-image-ten.vercel.app](https://prompt-image-ten.vercel.app)
+
 ImagineFlow AI is fully responsive and features class-based Dark/Light themes, glassmorphism elements, Outfit/Inter typography, and staggered spring animations.
 
 ---
