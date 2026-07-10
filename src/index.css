@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  body {
+    @apply font-sans bg-zinc-950 text-zinc-100 transition-colors duration-300 antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body.light {
+    @apply bg-zinc-50 bg-zinc-50 text-zinc-900;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-zinc-900/60 border border-zinc-800/85 backdrop-blur-md;
+  }
+
+  body.light .glass {
+    @apply bg-white/75 border-zinc-200/90;
+  }
+
+  .glass-card {
+    @apply bg-zinc-900/30 border border-zinc-800/50 backdrop-blur-sm rounded-xl shadow-lg;
+  }
+
+  body.light .glass-card {
+    @apply bg-white/35 border-zinc-200/50 shadow-sm;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-violet-400 to-pink-500;
+  }
+
+  body.light .text-gradient {
+    @apply bg-gradient-to-r from-indigo-600 via-violet-600 to-pink-600;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-800 rounded-full hover:bg-zinc-700 transition-colors;
+}
+
+body.light ::-webkit-scrollbar-thumb {
+  @apply bg-zinc-300 rounded-full hover:bg-zinc-400;
+}
+
+/* Subgrid or dot grid background for that premium Vercel/Linear feel */
+.bg-grid-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+body.light .bg-grid-dots {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
+/* Selection */
+::selection {
+  @apply bg-indigo-500/30 text-indigo-200;
+}
+
+body.light ::selection {
+  @apply bg-indigo-500/20 text-indigo-900;
+}
